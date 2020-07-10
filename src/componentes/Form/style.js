@@ -22,6 +22,11 @@ export const Input = styled.input`
     color:#8D8484;
     padding:0px 10px;
     border: ${border};
+    transition:.5s;
+
+    :focus{
+        box-shadow: 0 0 2px #2196f3;
+    }
 
 `;
 export const Button = styled.button`
@@ -32,4 +37,10 @@ export const Button = styled.button`
     background: #186C8F;
     border-radius: 0px 5px 5px 0px;
     border: ${border};
+    transition:.5s;
+    cursor: pointer;
+
+    :hover{
+        background:#165b78;
+    }
 `;

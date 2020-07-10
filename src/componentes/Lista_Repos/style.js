@@ -1,4 +1,16 @@
-import styled from "styled-components";
+import styled,{keyframes} from "styled-components";
+
+
+const animacaoRepo = keyframes`
+  0% {
+    opacity:0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity:1;
+    transform: translateY(0);
+  }
+`;
 
 
 export const Repo = styled.div`
@@ -10,6 +22,14 @@ export const Repo = styled.div`
     margin: 46px 46px 0px 0;
     font-family:sans-serif;
     padding:0px 10px 0px 20px;
+    transition:.2s;
+    opacity:0;
+    animation ${animacaoRepo} .5s ease-in forwards;
+
+    :hover{
+
+        background: #f7f7f7;
+    }
 
     h4{
         color:#186C8F;

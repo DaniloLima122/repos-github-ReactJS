@@ -50,10 +50,6 @@ const TelaInicial = () => {
                 <ListaRepositorios>
                     <Repositorios dados={data} />
                     <Repositorios dados={data} />
-                    <Repositorios dados={data} />
-                    <Repositorios dados={data} />
-                    <Repositorios dados={data} />
-                    <Repositorios dados={data} />
                 </ListaRepositorios>
                 
 
