@@ -12,7 +12,7 @@ export const Formulario = styled.section`
     margin-top:${marginTop + "px"};
     display:flex;
     
-`
+`;
 
 export const Input = styled.input`
 
@@ -24,12 +24,14 @@ export const Input = styled.input`
     padding:0px 10px;
     border: ${border};
     transition:.5s;
+    box-shadow: 0 0 2px #aaa;
 
     :focus{
         box-shadow: 0 0 2px #2196f3;
     }
 
 `;
+
 export const Button = styled.button`
 
     padding-top:6px;
@@ -40,6 +42,7 @@ export const Button = styled.button`
     border: ${border};
     transition:.5s;
     cursor: pointer;
+    
 
     :hover{
         background:#165b78;
@@ -90,5 +93,5 @@ p{
     
 }
 
-`
+`;
 
