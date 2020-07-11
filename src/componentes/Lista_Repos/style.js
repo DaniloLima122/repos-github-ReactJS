@@ -41,9 +41,16 @@ export const Repo = styled.div`
         background: #f7f7f7;
     }
 
+
+    p,h4,.language{
+        cursor: context-menu;
+    }
+
     h4{
         color:#186C8F;
         font-size:19px;
+        max-width: 90%;
+        word-wrap: break-word;
     }
 
   

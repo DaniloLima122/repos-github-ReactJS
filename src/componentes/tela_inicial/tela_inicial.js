@@ -19,7 +19,6 @@ const estilo_icon_fundo = {
     height: "532.85px",
     color: "#ebebeb",
     position: "absolute",
-    background: "linear-gradient(180deg, #ECECEC 0%, rgba(227, 227, 227, 0) 100%);",
     right: "0px"
 }
 
@@ -32,16 +31,18 @@ const TelaInicial = () => {
 
     const [listaRepos, setlistaRepos] = useState("");
 
+    const [pesquisou,setPesquisou] = useState(false);
 
     const busca_repos = async (query) => {
 
-        const data = await fetch("https://api.github.com/search/repositories?q=jquery+in%3Aname&type=Repositories");
+        const data = await fetch(`https://api.github.com/search/repositories?q=${query}+in%3Aname&type=Repositories&resource?page=1`);
 
         const repos = await data.json();
 
         setlistaRepos(repos);
-     
-        console.log(listaRepos); 
+        
+        setPesquisou(true);
+
     };
 
     const handleChange = e => {
@@ -74,7 +75,7 @@ const TelaInicial = () => {
 
 
                 <ListaRepositorios>
-                    <Repositorios dados={listaRepos} />
+                    <Repositorios dados={listaRepos} pesquisou={pesquisou} />
                 </ListaRepositorios>
 
             </Dashboard>
