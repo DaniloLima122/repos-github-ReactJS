@@ -1,4 +1,4 @@
-import styled,{keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 
 const animacaoRepo = keyframes`
@@ -12,6 +12,16 @@ const animacaoRepo = keyframes`
   }
 `;
 
+
+export const Semdados = styled.h3`
+    
+    color: #aaa;
+    text-align:center;
+    font-family: sans-serif;
+    margin: 15% 25%;
+    
+    
+`
 
 export const Repo = styled.div`
 
@@ -35,7 +45,8 @@ export const Repo = styled.div`
         color:#186C8F;
         font-size:19px;
     }
-    
+
+  
     p,.language{
         color:#8D8484;
         font-size:12px;
@@ -55,14 +66,21 @@ export const Repo = styled.div`
 
     p.desc{
         font-size:12px;
+        max-height:55px;
+        overflow:hidden;
+        padding: 0 7px 0 0;
         transform: translateY(-10px);
         margin-bottom:35px;
+        text-align:left;
     }
 
     div{
         display:flex;
         justify-content: space-between;
         align-items:center;
+        position:absolute;
+        bottom:5px;
+        width:92%;
     }
 
     span{

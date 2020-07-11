@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Body } from "./global_style";
 
-import { Header, Dashboard, ListaRepositorios } from "./style";
+import { Header, Dashboard, ListaRepositorios, Formulario, Input, Button } from "./style";
 
 import { Icon } from '@iconify/react';
 
 import githubFilled from '@iconify/icons-ant-design/github-filled';
 
-import Form from "../Form/Form";
-
 import Repositorios from "../Lista_Repos/Repositorios";
+
+import searchOutlined from '@iconify/icons-ant-design/search-outlined';
+
 
 const estilo_icon_fundo = {
 
@@ -26,15 +27,34 @@ const estilo_icon_fundo = {
 
 const TelaInicial = () => {
 
-    const data = {
 
-        titulo: "dashboard-flexbox",
-        user: "DaniloLima122",
-        descricao: "Dashboard construído com HTML e  CSS Flexbox Layout",
-        stars: 543,
-        forks: 125,
-        language: "CSS"
+    const [campo, setCampo] = useState("");
+
+    const [listaRepos, setlistaRepos] = useState("");
+
+
+    const busca_repos = async (query) => {
+
+        const data = await fetch("https://api.github.com/search/repositories?q=jquery+in%3Aname&type=Repositories");
+
+        const repos = await data.json();
+
+        setlistaRepos(repos);
+     
+        console.log(listaRepos); 
     };
+
+    const handleChange = e => {
+
+        setCampo(e.target.value);
+    }
+
+    const submit = () => {
+
+        busca_repos(campo);
+
+    }
+
 
     return (
         <>
@@ -45,16 +65,19 @@ const TelaInicial = () => {
                     <h1>Repositórios do <span>GitHub</span></h1>
                     <p>Para pesquisar um repositório digite no campo abaixo e pressione o botão</p>
                 </Header>
-                <Form />
+                <Formulario>
+                    <Input type="text" value={campo} onChange={handleChange} />
+                    <Button onClick={submit}>
+                        <Icon icon={searchOutlined} style={{ color: '#fff', width: "25px", height: "25px" }} />
+                    </Button>
+                </Formulario>
+
 
                 <ListaRepositorios>
-                    <Repositorios dados={data} />
-                    <Repositorios dados={data} />
+                    <Repositorios dados={listaRepos} />
                 </ListaRepositorios>
-                
 
-           </Dashboard> 
-                
+            </Dashboard>
 
         </>
     )
