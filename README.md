@@ -35,7 +35,7 @@ npm start
 ~~~
 
 
-## Cntribuições
+## Contribuições
 
 Fique a vontade para avaliar dando uma "star" ou contribuir com o projeto e reportar sobre bugs e dar sugestões de melhorias.
 
