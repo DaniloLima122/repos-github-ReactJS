@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 
-import { Repo, Semdados } from "./style";
+import { Repo, Semdados, DetalhesResult } from "./style";
 
 import { Icon } from '@iconify/react';
 
@@ -14,41 +14,54 @@ const Repositorios = (props) => {
 
     let result = props.dados.items || "";
 
+    let msg = "";
+
     if (result.length > 0) {
 
+        msg = `Foram encontrados ${result.length} repositórios`;
         return (
 
-            result.map(repos => {
+            <Fragment>
+                <DetalhesResult>{msg}</DetalhesResult>
 
-                return (
+                {result.map(repos => {
 
-                    <Repo key={repos.id}>
-                        <h4>{repos.name}</h4>
-                        <p className="user">{repos.owner.login}</p>
-                        <p className="desc" title={repos.description || "Sem descrição"}>{repos.description}</p>
-                        <div>
-                            <span>
-                                <Icon icon={starFilled} style={{ color: '#8D8484' }} />
-                                <label className="stars">{repos.stargazers_count}</label>
-                                <Icon icon={gitFork} style={{ color: '#8D8484' }} />
-                                <label className="forks">{repos.forks_count}</label>
-                            </span>
-                            <p className="language">{repos.language || "None"}</p>
-                        </div>
+                    return (
 
-                    </Repo>
-                )
-            })
+                        <Repo key={repos.id}>
+
+                            <h4>{repos.name}</h4>
+                            <p className="user">{repos.owner.login}</p>
+                            <p className="desc" title={repos.description || "Repositório sem descrição"}>{repos.description || "Repositório sem descrição"}</p>
+                            <div>
+                                <span>
+                                    <Icon icon={starFilled} style={{ color: '#8D8484' }} />
+                                    <label className="stars">{repos.stargazers_count}</label>
+                                    <Icon icon={gitFork} style={{ color: '#8D8484' }} />
+                                    <label className="forks">{repos.forks_count}</label>
+                                </span>
+                                <p className="language">{repos.language || "None"}</p>
+                            </div>
+
+                        </Repo>
+                    )
+                })}
+            </Fragment>
         )
 
     } else {
 
-        if (props.pesquisou)
+        if (props.pesquisou) {
 
-            return <Semdados>Nenhum resultado encontrado</Semdados>
-            
-        else
+
+
+            msg = "Não foi encontrado nenhum repositório";
+            return <DetalhesResult>{msg}</DetalhesResult>;
+
+
+        } else {
             return <Semdados>Você ainda não fez nenhuma pesquisa</Semdados>
+        }
     }
 }
 
