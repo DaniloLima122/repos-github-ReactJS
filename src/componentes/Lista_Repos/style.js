@@ -21,6 +21,15 @@ export const Semdados = styled.h3`
     margin: 15% 25%;
     
     
+`;
+
+export const DetalhesResult = styled.span`
+
+    position: absolute;
+    color: ${props => props.campoVazio || "#aaa"};
+    margin: 5px 0;
+    font-family: sans-serif;
+    font-size: 13px;
 `
 
 export const Repo = styled.div`
