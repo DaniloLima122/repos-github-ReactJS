@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
 
-
 const animacaoRepo = keyframes`
   0% {
     opacity:0;
@@ -11,7 +10,6 @@ const animacaoRepo = keyframes`
     transform: translateY(0);
   }
 `;
-
 
 export const Semdados = styled.h3`
     
