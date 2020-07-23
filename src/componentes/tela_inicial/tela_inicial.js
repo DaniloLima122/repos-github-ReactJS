@@ -26,17 +26,13 @@ const estilo_icon_fundo = {
     right: "0px"
 }
 
-
-
 const TelaInicial = () => {
-
 
     const [campo, setCampo] = useState("");
 
     const [listaRepos, setlistaRepos] = useState("");
 
     const [pesquisou, setPesquisou] = useState(false);
-
 
     const busca_repos = async (query) => {
 
@@ -59,7 +55,6 @@ const TelaInicial = () => {
 
         busca_repos(campo);
     }
-
 
     return (
         <>
@@ -87,6 +82,5 @@ const TelaInicial = () => {
     )
 
 }
-
 
 export default TelaInicial;
