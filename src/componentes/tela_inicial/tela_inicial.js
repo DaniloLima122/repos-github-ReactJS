@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Body } from "./global_style";
 
-import { Header, Dashboard, ListaRepositorios, Formulario} from "./style";
+import { Header, Dashboard, ListaRepositorios, Formulario } from "./style";
 
 import Button from "../Botao/Botao";
 
@@ -35,7 +35,8 @@ const TelaInicial = () => {
 
     const [listaRepos, setlistaRepos] = useState("");
 
-    const [pesquisou,setPesquisou] = useState(false);
+    const [pesquisou, setPesquisou] = useState(false);
+
 
     const busca_repos = async (query) => {
 
@@ -44,7 +45,7 @@ const TelaInicial = () => {
         const repos = await data.json();
 
         setlistaRepos(repos);
-        
+
         setPesquisou(true);
 
     };
@@ -57,7 +58,6 @@ const TelaInicial = () => {
     const submit = () => {
 
         busca_repos(campo);
-
     }
 
 
@@ -77,9 +77,8 @@ const TelaInicial = () => {
                     </Button>
                 </Formulario>
 
-
                 <ListaRepositorios>
-                    <Repositorios dados={listaRepos} pesquisou={pesquisou} />
+                    <Repositorios dados={listaRepos} pesquisou={pesquisou}/>
                 </ListaRepositorios>
 
             </Dashboard>
