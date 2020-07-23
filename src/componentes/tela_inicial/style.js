@@ -11,43 +11,42 @@ export const Formulario = styled.section`
     width: auto;
     margin-top:${marginTop + "px"};
     display:flex;
-    
-`;
 
-export const Input = styled.input`
+    input{
+        width: 382px;
+        height: 40px;
+        background:#FFFFFF;
+        border-radius: 5px 0px 0px 5px;
+        color:#8D8484;
+        padding:0px 10px;
+        border: ${border};
+        transition:.5s;
+        box-shadow: 0 0 2px #aaa;
 
-    width: 382px;
-    height: 40px;
-    background:#FFFFFF;
-    border-radius: 5px 0px 0px 5px;
-    color:#8D8484;
-    padding:0px 10px;
-    border: ${border};
-    transition:.5s;
-    box-shadow: 0 0 2px #aaa;
+        :focus{
+            box-shadow: 0 0 2px #2196f3;
+        }   
+    } 
 
-    :focus{
-        box-shadow: 0 0 2px #2196f3;
+    button{
+        padding-top:6px;
+        width: 59px;
+        height: 40px;
+        background: #186C8F;
+        border-radius: 0px 5px 5px 0px;
+        border: none;
+        transition:.5s;
+        cursor: pointer;
+        outline:none;
+        
+
+        :hover{
+            background:#165b78;
+        }
     }
 
 `;
 
-export const Button = styled.button`
-
-    padding-top:6px;
-    width: 59px;
-    height: 40px;
-    background: #186C8F;
-    border-radius: 0px 5px 5px 0px;
-    border: ${border};
-    transition:.5s;
-    cursor: pointer;
-    
-
-    :hover{
-        background:#165b78;
-    }
-`;
 
 
 export const ListaRepositorios = styled.div`

@@ -1,10 +1,8 @@
 import React from "react";
 
-import {Button as Botao}  from "./style";
-
 const Button = ({onClick,children}) => (
 
-    <Botao onClick={onClick}>{children}</Botao>
+    <button onClick={onClick}>{children}</button>
 )
 
 

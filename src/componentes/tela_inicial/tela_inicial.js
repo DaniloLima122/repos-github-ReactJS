@@ -2,7 +2,11 @@ import React, { useState } from "react";
 
 import { Body } from "./global_style";
 
-import { Header, Dashboard, ListaRepositorios, Formulario, Input, Button } from "./style";
+import { Header, Dashboard, ListaRepositorios, Formulario} from "./style";
+
+import Button from "../Botao/Botao";
+
+import Input from "../Input/Input";
 
 import { Icon } from '@iconify/react';
 
