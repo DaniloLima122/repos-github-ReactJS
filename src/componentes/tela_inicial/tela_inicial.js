@@ -17,6 +17,9 @@ import Repositorios from "../Lista_Repos/Repositorios";
 import searchOutlined from '@iconify/icons-ant-design/search-outlined';
 
 
+import { busca_repositorios } from "../PesquisaRepos/BuscaRepositorios";
+
+
 const estilo_icon_fundo = {
 
     width: "549px",
@@ -34,18 +37,6 @@ const TelaInicial = () => {
 
     const [pesquisou, setPesquisou] = useState(false);
 
-    const busca_repos = async (query) => {
-
-        const data = await fetch(`https://api.github.com/search/repositories?q=${query}+in%3Aname&type=Repositories&resource?page=1`);
-
-        const repos = await data.json();
-
-        setlistaRepos(repos);
-
-        setPesquisou(true);
-
-    };
-
     const handleChange = e => {
 
         setCampo(e.target.value);
@@ -53,7 +44,7 @@ const TelaInicial = () => {
 
     const submit = () => {
 
-        busca_repos(campo);
+        busca_repositorios(campo,setlistaRepos,setPesquisou)
     }
 
     return (
@@ -73,7 +64,7 @@ const TelaInicial = () => {
                 </Formulario>
 
                 <ListaRepositorios>
-                    <Repositorios dados={listaRepos} pesquisou={pesquisou}/>
+                    <Repositorios dados={listaRepos} pesquisou={pesquisou} />
                 </ListaRepositorios>
 
             </Dashboard>
