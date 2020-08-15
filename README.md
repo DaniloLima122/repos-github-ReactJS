@@ -1,4 +1,4 @@
-## Pesquisa repositórios API GitHub
+## Pesquisa repositórios API GitHub 😄
 #### Aplicação que busca repositorios na API do GitHub
 
 ![](layout.png)
